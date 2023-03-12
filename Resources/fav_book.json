@@ -7,7 +7,7 @@
 			"book_genre":"Romance",
 			"book_lang":"English",
 			"book_price":7.99
-		}
+		},
 		{
 			"book_id":2,
 			"book_title":"The Da Vinci Code",
@@ -15,7 +15,7 @@
 			"book_genre":"Mystery Thriller",
 			"book_lang":"English",
 			"book_price":20.73
-		}
+		},
 		{
 			"book_id":3,
 			"book_title":"Relic",
