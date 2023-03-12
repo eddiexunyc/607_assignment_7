@@ -1,3 +1,30 @@
-{"book_id":1,"book_title":"Pride and Prejudice","book_author":"Jane Austen","book_genre":"Romance","book_lang":"English","book_price":7.99}
-{"book_id":2,"book_title":"The Da Vinci Code","book_author":"Dan Brown","book_genre":"Mystery Thriller","book_lang":"English","book_price":20.73}
-{"book_id":3,"book_title":"Relic","book_author":"Douglas Preston & Lincoln Child","book_genre":"Horror Fiction","book_lang":"English","book_price":8.99}
+{"fav_book":
+	[
+		{
+			"book_id":1,
+			"book_title":"Pride and Prejudice",
+			"book_author":"Jane Austen",
+			"book_genre":"Romance",
+			"book_lang":"English",
+			"book_price":7.99
+		}
+		{
+			"book_id":2,
+			"book_title":"The Da Vinci Code",
+			"book_author":"Dan Brown",
+			"book_genre":"Mystery Thriller",
+			"book_lang":"English",
+			"book_price":20.73
+		}
+		{
+			"book_id":3,
+			"book_title":"Relic",
+			"book_author":"Douglas Preston & Lincoln Child",
+			"book_genre":"Horror Fiction",
+			"book_lang":"English",
+			"book_price":8.99
+		}
+	]
+	
+}
+
