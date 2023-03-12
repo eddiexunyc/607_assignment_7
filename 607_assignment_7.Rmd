@@ -10,24 +10,48 @@ The purpose of this assignment is to understand multiple file sources and its fo
 ## Load Packages
 ```{r}
 library(tidyverse)
+library(xml2)
+```
+## Setting up multiple data sources in different formats
+```{r}
+xml_url <- "https://raw.githubusercontent.com/eddiexunyc/607_assignment_7/main/Resources/fav_book.xml"
+json_url <- "https://raw.githubusercontent.com/eddiexunyc/607_assignment_7/main/Resources/fav_book.json"
+html_url <- "https://raw.githubusercontent.com/eddiexunyc/607_assignment_7/main/Resources/fav_book.html"
+
 ```
 
-## R Markdown
+## Load XML Dataset 
+```{r}
+xml_data <- read_xml(xml_url)
 
+# read text structure in xml format
+xml_structure(xml_data)
+```
+
+```{r}
+# extract each data from the xml file
+book_id <- xml_text(xml_find_all(xml_data, xpath = "//book_id"))
+book_title <-xml_text(xml_find_all(xml_data, xpath = "//book_title"))
+book_author <-xml_text(xml_find_all(xml_data, xpath = "//book_author"))
+book_genre <-xml_text(xml_find_all(xml_data, xpath = "//book_genre"))
+book_lang <-xml_text(xml_find_all(xml_data, xpath = "//book_lang"))
+book_price <-xml_text(xml_find_all(xml_data, xpath = "//book_price"))
+
+#convert the extracted data into a dataframe
+fav_book_df <- tibble(`Book ID` = book_id , `Title` = book_title, `Author` = book_author, `Genre` = book_genre, `Language` = book_lang, `Price` = book_price)
+
+#view the dataframe
+knitr::kable(fav_book_df)
+```
+
+## Load JSON dataset
 ```{r}
 
 ```
 
-## Including Plots
-
+## Load HTML dataset
 ```{r}
-
 ```
-
-
-
-
-
 
 
 
