@@ -14,14 +14,11 @@ library(tidyverse)
 
 ## R Markdown
 
-
 ```{r}
 
 ```
 
 ## Including Plots
-
-
 
 ```{r}
 
