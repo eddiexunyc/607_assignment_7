@@ -12,7 +12,7 @@ The purpose of this assignment is to understand multiple file sources and its fo
 library(tidyverse)
 library(xml2)
 library(rvest)
-library(rjson)
+library(jsonlite)
 ```
 ## Setting up multiple data sources in different formats
 ```{r}
@@ -50,7 +50,14 @@ knitr::kable(fav_book_df)
 ## Load JSON dataset
 ```{r}
 # read JSON dataset
+json_data <- fromJSON(json_url)
 
+#convert the data into a dataframe and rename the column
+json_df <- as.data.frame(json_data)
+colnames(json_df) <- c("Book ID", "Title", "Author", "Genre", "Language", "Price")
+
+#view dataframe
+knitr::kable(json_df)
 ```
 
 ## Load HTML dataset
@@ -68,5 +75,5 @@ knitr::kable(html_df)
 ```
 
 ## Conclusion
-Even though the data sources come in with different formats, it can be easily imported with right libraries. From there, data cleaning and analysis can be done easily.
+The data from different did not come in identical as the format structure is different between JSON, HTML, and XML. Even though the data sources come in with different formats, it can be easily imported with right libraries. From there, data cleaning and analysis can be done easily.
 
