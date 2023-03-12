@@ -11,6 +11,8 @@ The purpose of this assignment is to understand multiple file sources and its fo
 ```{r}
 library(tidyverse)
 library(xml2)
+library(rvest)
+library(rjson)
 ```
 ## Setting up multiple data sources in different formats
 ```{r}
@@ -22,6 +24,7 @@ html_url <- "https://raw.githubusercontent.com/eddiexunyc/607_assignment_7/main/
 
 ## Load XML Dataset 
 ```{r}
+# read xml dataset
 xml_data <- read_xml(xml_url)
 
 # read text structure in xml format
@@ -46,12 +49,24 @@ knitr::kable(fav_book_df)
 
 ## Load JSON dataset
 ```{r}
+# read JSON dataset
 
 ```
 
 ## Load HTML dataset
 ```{r}
+# read HTML dataset
+html_data <- read_html(html_url)
+
+# convert html data into a dataframe
+html_df <- html_data %>%
+  html_node("table") %>%
+  html_table(header = TRUE, fill = TRUE)
+
+# view dataframe
+knitr::kable(html_df)
 ```
 
-
+## Conclusion
+Even though the data sources come in with different formats, it can be easily imported with right libraries. From there, data cleaning and analysis can be done easily.
 
